@@ -1,0 +1,9 @@
+*.pyc
+*.jpg
+*.JPG
+*.png
+*.jpeg
+output/
+content/images/
+lib/
+bin/

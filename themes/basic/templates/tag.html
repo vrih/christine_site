@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="content">
+
+<ul id="post-list">
+{% for article in articles_page.object_list %}
+        <li><article class="hentry" itemscope itemtype="http://schema.org/Article">
+                <header> 
+                  <abbr class="published updated" title="{{ article.date.iso_date }}"> {{ article.date.strftime('%A, %d %m %Y') }} </abbr>
+                  <h2 class="entry-title" itemprop="name"><a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
+                <div class="entry-content"> {{ article.content }} </div><!-- /.entry-content -->
+                <div class="author vcard">
+                  Article By: <span itemprop="author" itemtype="http://schema.org/Person"><a class="url fn" href="https://twitter.com/verystylishgirl" rel="publisher" itemprop="name">Christine</a></span>
+                </div>
+        </article></li>
+{% endfor %}
+</ul><!-- /#posts-list -->
+{% include 'pagination.html' %}
+</section><!-- /#content -->
+{% endblock content %}

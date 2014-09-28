@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<section id="content">
+
+<article class="hentry" itemscope itemtype="http://schema.org/Article">
+  <meta itemprop="image" content="http://intotheglorybox.com{{ article.image }}" />
+        <div class="published updated" 
+             title="{{ article.date.iso_date }}" 
+             itemprop="datePublished" 
+             content="{{ article.date.iso_date }}">{{ article.date.strftime('%A, %d %m %Y') }}</div>
+	<header>
+	  <h1>
+	    <a href="{{ pagename }}"
+	       rel="bookmark"
+	       title="Permalink to {{ article.title }}"
+               class="entry-title"
+               itemprop="name">
+	      {{ article.title}}
+	    </a>
+	  </h1>
+	</header>
+	
+	<div class="entry-content" itemprop="articleBody">
+	
+	<div class="well">
+	</div>
+	{{ article.content }}
+
+        <div class="author vcard" >
+          Article By: <span itemprop="author" itemtype="http://schema.org/Person"><a class="url fn" href="https://twitter.com/verystylishgirl" rel="publisher" itemprop="name">Christine</a></span>
+        </div>
+
+
+        <div class="social">
+<div class="fb-share-button" data-href="http://intotheglorybox.com/{{ article.url }}" data-type="button_count"></div>
+<!-- Place this tag where you want the share button to render. -->
+<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<!-- Place this tag after the last share tag. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'en-GB'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</div>
+
+	</div><!-- /.entry-content -->
+	<div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'introtheglorybox'; // required: replace example with your forum shortname
+          
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+</article>
+</section>
+{% endblock %}
