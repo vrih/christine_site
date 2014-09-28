@@ -179,4 +179,8 @@ footer { clear:both;}
 	height: 100%;
 }
 
-.fb-share-button{ top:-5px}
+.author {
+    padding-bottom: 10px;
+}
+
+.fb-share-button{ top: -5px}
