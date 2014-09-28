@@ -7,3 +7,5 @@ output/
 content/images/
 lib/
 bin/
+include/
+local/
