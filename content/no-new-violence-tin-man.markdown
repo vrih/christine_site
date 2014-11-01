@@ -2,7 +2,7 @@ Title: “No New Violence (vocal)” - Ode - Tin Man - Absurd Recordings US
 Date: 2014-11-01 21:22
 Tags: Tin Man
 
-{% soundcloud 164160393 %}
+{% soundcloudbig 164160393 %}
 
 When the sun goes down and the party’s over, this is the track you’ll
 be playing to keep you suspended between that state of heightened

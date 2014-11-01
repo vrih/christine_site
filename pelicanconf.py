@@ -37,7 +37,8 @@ THEME = 'themes/basic'
 PLUGIN_PATH = 'pelican-plugins'
 
 PLUGINS = ['liquid_tags.soundcloud', 'liquid_tags.youtube', 'liquid_tags.spotify',
-         'liquid_tags.vimeo', 'liquid_tags.spotifylist', 'sitemap']
+           'liquid_tags.vimeo', 'liquid_tags.spotifylist',
+           'liquid_tags.soundcloudbig', 'sitemap']
 
 DISQUS_SITENAME = 'introtheglorybox'
 
