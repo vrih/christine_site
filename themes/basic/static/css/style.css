@@ -184,3 +184,7 @@ footer { clear:both;}
 }
 
 .fb-share-button{ top: -5px}
+
+#post-list li{
+    margin-bottom: 15px;
+}
